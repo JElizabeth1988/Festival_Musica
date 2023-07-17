@@ -1,0 +1,10 @@
+//forma anterior Sass
+//import ya no se usa
+//@import 'base/variables';
+
+//forma nueva Sass
+//forward indica y apunta a donde están los archivos y se usa con use
+//use
+@use 'base';
+@use 'contenido';
+

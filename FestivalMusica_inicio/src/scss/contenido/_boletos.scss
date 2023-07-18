@@ -12,7 +12,7 @@
     .contenedor-boletos {
 
         @include m.tablet {
-            @include m.grid(2, 5rem);
+            @include m.grid(2, 5rem);//2 columnas separadas por 5 rem
         }
     }
 }
@@ -24,9 +24,9 @@
     .nombre-pase {
         text-align: center;
         font-size: 2.8rem;
-        color: v.$blanco;
+        color: v.$blanco;//@use 'base/variables' as v;
     }
-    &-header,
+    &-header,// Ampersand toma la clase padre (.pase) para ahorrar código
     &-footer  {
         padding: .5rem;
         p {
@@ -39,7 +39,7 @@
     &-header {
         background-color: v.$rosa;
         p {
-            text-transform: uppercase;
+            text-transform: uppercase;//mayúscula
             font-size: 1.6rem;
         }
     }

@@ -7,16 +7,16 @@ function iniciarApp() {
     crearGaleria();
     scrollNav();
 }
-
+//Fijar el header
 function navegacionFija() {
-    const barra = document.querySelector('.header');
+    const barra = document.querySelector('.header');//Seleccionar header
     const sobreFestival = document.querySelector('.sobre-festival');
     const body = document.querySelector('body');
 
 
     window.addEventListener('scroll', function() {
-        if( sobreFestival.getBoundingClientRect().bottom < 0  ) {
-            barra.classList.add('fijo');
+        if( sobreFestival.getBoundingClientRect().bottom < 0  ) {//cuando llega al elemento (Sobre Festival) se ejecuta la función
+            barra.classList.add('fijo');//fijo el elemento
             body.classList.add('body-scroll');
         } else {
             barra.classList.remove('fijo');
@@ -25,15 +25,15 @@ function navegacionFija() {
     });
 }
 
-
+//Función para que el scroll hacía las secciones no se haga de manera brusca
 function scrollNav() {
     const enlaces = document.querySelectorAll('.navegacion-principal a');
 
-    enlaces.forEach( enlace => {
-        enlace.addEventListener('click', function(e) {
+    enlaces.forEach( enlace => {//itera en cada enlace
+        enlace.addEventListener('click', function(e) {//Escucha por un click y ejecuta la función
             e.preventDefault();
 
-            const seccionScroll = e.target.attributes.href.value;
+            const seccionScroll = e.target.attributes.href.value;//llama al valor del href (enlace)
             const seccion = document.querySelector(seccionScroll);
             seccion.scrollIntoView({ behavior: "smooth"});
         });
